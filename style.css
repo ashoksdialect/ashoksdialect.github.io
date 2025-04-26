@@ -31,11 +31,14 @@ p {
 .social-links a {
   text-decoration: none;
   color: white;
-  background-color: #0077b5; /* Default LinkedIn blue */
+  background-color: #0077b5;
   padding: 10px 20px;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  width: 250px; /* <-- fixed width for all boxes */
+  text-align: center; /* center the text inside */
+  transition: background-color 0.3s, transform 0.2s;
 }
+
 
 .social-links a:hover {
   opacity: 0.8;
