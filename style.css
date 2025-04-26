@@ -22,10 +22,11 @@ p {
 
 .social-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* stack vertically */
   gap: 15px;
-  justify-content: center;
+  align-items: center; /* center horizontally */
 }
+
 
 .social-links a {
   text-decoration: none;
