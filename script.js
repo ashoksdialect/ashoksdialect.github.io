@@ -1,6 +1,14 @@
 // Portfolio interaction enhancements
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Load the responsive refinements without requiring a template colour change.
+    if (!document.querySelector('link[href="responsive-enhancements.css"]')) {
+        const responsiveStyles = document.createElement('link');
+        responsiveStyles.rel = 'stylesheet';
+        responsiveStyles.href = 'responsive-enhancements.css';
+        document.head.appendChild(responsiveStyles);
+    }
+
     // Keep in-page navigation smooth while allowing the home control to return to the hero.
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (event) {
@@ -17,12 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (homeLink) {
         homeLink.href = '#home';
         homeLink.classList.add('home-link');
+        homeLink.removeAttribute('onclick');
         homeLink.setAttribute('aria-label', 'Back to home');
         homeLink.setAttribute('title', 'Back to home');
         homeLink.innerHTML = '<i class="fas fa-house-chimney-window home-icon" aria-hidden="true"></i>';
     }
 
-    // Add the resume action to the top navigation without changing the existing palette.
+    // Add a resume download action to the top navigation.
     const navLinks = document.querySelector('.nav-links');
     if (navLinks && !navLinks.querySelector('.resume-nav-link')) {
         const resumeLink = document.createElement('a');
@@ -35,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.appendChild(resumeLink);
     }
 
-    // Give the introduction a little more visual hierarchy while retaining the existing copy.
+    // Add emphasis to the most relevant capabilities while retaining the existing copy and palette.
     const heroDescription = document.querySelector('.hero-description');
     if (heroDescription && !heroDescription.querySelector('.hero-keyword')) {
         const copy = heroDescription.textContent;
