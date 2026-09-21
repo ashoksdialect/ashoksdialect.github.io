@@ -1,75 +1,67 @@
-// Portfolio interaction enhancements
-
+// ===== Smooth scroll for navigation links =====
 document.addEventListener('DOMContentLoaded', () => {
-    // Load the responsive refinements without requiring a template colour change.
-    if (!document.querySelector('link[href="responsive-enhancements.css"]')) {
-        const responsiveStyles = document.createElement('link');
-        responsiveStyles.rel = 'stylesheet';
-        responsiveStyles.href = 'responsive-enhancements.css';
-        document.head.appendChild(responsiveStyles);
-    }
-
-    // Keep in-page navigation smooth while allowing the home control to return to the hero.
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (event) {
+        anchor.addEventListener('click', function (e) {
             const target = document.querySelector(this.getAttribute('href'));
-            if (!target) return;
-
-            event.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
+});
 
-    // Replace the initials with a compact, recognizable home mark.
-    const homeLink = document.querySelector('.logo-section .avatar');
-    if (homeLink) {
-        homeLink.href = '#home';
-        homeLink.classList.add('home-link');
-        homeLink.removeAttribute('onclick');
-        homeLink.setAttribute('aria-label', 'Back to home');
-        homeLink.setAttribute('title', 'Back to home');
-        homeLink.innerHTML = '<i class="fas fa-house-chimney-window home-icon" aria-hidden="true"></i>';
-    }
-
-    // Add a resume download action to the top navigation.
-    const navLinks = document.querySelector('.nav-links');
-    if (navLinks && !navLinks.querySelector('.resume-nav-link')) {
-        const resumeLink = document.createElement('a');
-        resumeLink.className = 'resume-nav-link';
-        resumeLink.href = 'Ashok_Rajendran.pdf';
-        resumeLink.download = '';
-        resumeLink.setAttribute('aria-label', 'Download resume');
-        resumeLink.setAttribute('title', 'Download resume');
-        resumeLink.innerHTML = '<i class="fas fa-file-arrow-down" aria-hidden="true"></i><span>Resume</span>';
-        navLinks.appendChild(resumeLink);
-    }
-
-    // Add emphasis to the most relevant capabilities while retaining the existing copy and palette.
-    const heroDescription = document.querySelector('.hero-description');
-    if (heroDescription && !heroDescription.querySelector('.hero-keyword')) {
-        const copy = heroDescription.textContent;
-        const keywords = /((?:data )?pipelines|real-time processing|cloud-native architecture|scalable data infrastructure|meaningful insights)/gi;
-        heroDescription.innerHTML = copy.replace(keywords, '<span class="hero-keyword">$1</span>');
-    }
-
-    // Dynamic years of experience calculation.
-    const joiningDate = new Date(2017, 8, 1);
+// ===== Dynamic years of experience calculation =====
+document.addEventListener('DOMContentLoaded', () => {
+    const joiningDate = new Date(2017, 8, 1); // September 1, 2017 (months are 0-indexed)
     const now = new Date();
     let years = now.getFullYear() - joiningDate.getFullYear();
-    const monthDelta = now.getMonth() - joiningDate.getMonth();
-    if (monthDelta < 0 || (monthDelta === 0 && now.getDate() < joiningDate.getDate())) years--;
-
-    const yearsElem = document.getElementById('years-experience');
-    if (yearsElem) yearsElem.textContent = years;
-
-    // Scroll-to-top behavior is kept here as a fallback for pages that do not use inline logic.
-    const scrollBtn = document.getElementById('scrollToTopBtn');
-    if (scrollBtn) {
-        const updateScrollButton = () => {
-            scrollBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
-        };
-        window.addEventListener('scroll', updateScrollButton, { passive: true });
-        updateScrollButton();
-        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    const m = now.getMonth() - joiningDate.getMonth();
+    if (m < 0 || (m === 0 && now.getDate() < joiningDate.getDate())) {
+        years--;
     }
+    const yearsElem = document.getElementById('years-experience');
+    if (yearsElem) {
+        yearsElem.textContent = years;
+    }
+});
+
+// ===== Scroll to top button (moved from index.html inline script) =====
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    if (!scrollBtn) return;
+    window.addEventListener('scroll', () => {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            scrollBtn.style.display = 'block';
+        } else {
+            scrollBtn.style.display = 'none';
+        }
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+
+// ===== Light/Dark mode toggle with persistence =====
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+    toggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
 });
