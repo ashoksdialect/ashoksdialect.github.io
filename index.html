@@ -36,7 +36,7 @@
         <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="hero-content">
-                <div class="hero-tag">Data Engineer / SDE — Data & Cloud</div>
+                <div class="hero-tag">Data Engineer / SDE - Data & Cloud</div>
                 <!-- <h1 class="hero-title">Ashok Rajendran</h1> -->
                 <h1 class="hero-title">
                     <span class="line-1">ASHOK</span><br>
@@ -44,7 +44,7 @@
                 </h1>
                 <p class="hero-description">
                     I build <strong>modern data infrastructure that converts raw data into meaningful insights</strong>.
-                    Currently working with large-scale data systems — experience across
+                    Currently working with large-scale data systems, with experience across
                     <span class="hl">BigQuery</span>, <span class="hl">Snowflake</span>,
                     <span class="hl">Spark</span>, <span class="hl">Airflow</span>,
                     <span class="hl">Python</span> &amp; <span class="hl">SQL</span>.
@@ -84,22 +84,26 @@
                     <h3>Best Buy™ India <span class="company-date">Apr 2025 - Present</span></h3>
                 </div>
                 <p class="role-title">Software Engineer - II (Data & Cloud)</p>
-                <p class="role-description">Primarily focused on analyzing SAP reports and tracing data lineage from the reporting layer back through the medallion architecture—gold, silver, bronze layers—to the source RDBMS. The existing architecture is built on Teradata with ETL via Informatica. This analysis is used to reconstruct the data flow in Google Cloud using BigQuery and to build new reports in Looker Studio Pro.</p>
+                <p class="role-description">Building cloud-native data models and pipelines on Google Cloud and Snowflake that power subscription revenue reporting, conditional offer analytics, and secure partner data collaboration, while modernizing on-premises data assets and strengthen cloud foundation and DevOps capabilities.</p>
                 <div class="achievements">
                     <h4>Major Contributions:</h4>
                     <ul>
-                        <li>Conducted in-depth lineage analysis of SAP reports across Teradata-based medallion architecture</li>
-                        <li>Mapped data flow from gold layer to source systems to support migration to Google Cloud</li>
-                        <li>Rebuilt data pipelines and models in BigQuery based on legacy architecture insights</li>
-                        <li>Designed and developed reports in Looker Studio Pro for enhanced visualization and accessibility</li>
+                        <li>Designed and built a BigQuery data model to consolidate active subscription customers for Best Buy, enabling tracking of $1.2B in annual subscription revenue and providing a unified view of customer subscription data for reporting and analysis</li>
+                        <li>Architected and successfully developed a complex BigQuery data model for Best Buy's conditional offer sales, integrating 6 product-category-specific tables with intricate business logic to calculate offer amounts across products with varying warranty structures and frequently changing business rules</li>
+                        <li>Designing and implementing a Snowflake Data Clean Room for Best Buy to establish a secure environment for joint analytics with vendor partners without exposing underlying raw data</li>
+                        <li>Successfully modernized and rebuilt data pipelines in Google Cloud Platform (GCP) to migrate on-premises data assets to the cloud, reducing infrastructure dependency and lowering operational costs by approximately 30%</li>
+                        <li>Engineered and deployed a Google Cloud Workflow to process 5 customer subscription assets in parallel, serving as the source of truth for more than 20 years of customer subscription lifecycle data</li>
+                        <li>Successfully implemented DevOps and cloud foundation capabilities as part of the Cloud Data Foundation team, including secure project provisioning, secret management, Workload Identity Federation (WIF), and OAuth integration</li>
                     </ul>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-tag">SQL</span>
                     <span class="tech-tag">GCP</span>
                     <span class="tech-tag">BigQuery</span>
-                    <span class="tech-tag">Looker Studio Pro</span>
+                    <span class="tech-tag">Cloud Workflows</span>
                     <span class="tech-tag">Snowflake</span>
+                    <span class="tech-tag">Data Clean Room</span>
+                    <span class="tech-tag">Looker Studio Pro</span>
                     <span class="tech-tag">DevOps</span>
                 </div>
             </div>
@@ -117,11 +121,11 @@
                 <p class="role-description">Focused on developing scalable data models and pipelines using Python and SQL across AWS and GCP environments to process high-volume healthcare claims data, while ensuring compliance with privacy and security standards.</p>
                 <div class="achievements">
                     <ul>
-                        <li>Built ETL pipelines using Python and SQL on GCP (Cloud Functions & GKE) to monitor and process $250M in finalized claims daily (MBM Commercial model), orchestrated with Apache Airflow</li>
-                        <li>Developed and maintained cloud-based workflows using AWS Lambda, Glue, EMR, Step Functions, and GCP services</li>
-                        <li>Designed data models and contributed to architecture reviews with a focus on PHI/PII risk mitigation</li>
-                        <li>Presented technical designs to clients, demonstrating strong communication and domain knowledge</li>
-                        <li>Specialized in query optimization, code reviews, and lifecycle management to enhance data quality and security</li>
+                        <li>Designed and successfully developed an ETL pipeline using Python and SQL on Google Cloud to monitor and process $250M of finalized claims daily for the MBM Commercial accounting model</li>
+                        <li>Architected and built an AWS Glue-based ETL framework to support incremental and bulk data movement across Amazon S3, enabling secure and efficient exchange of 200 TB of incentives data with external vendors</li>
+                        <li>Strategically designed and reviewed enterprise data models and architecture solutions, incorporating data governance, security, and PHI/PII risk mitigation requirements for US-based clients</li>
+                        <li>Successfully optimized complex Snowflake SQL workloads on large datasets and contributed to code reviews, data quality improvements, and secure development practices</li>
+                        <li>Successfully managed and mentored a team of 8+ associates on Big Data technologies, Hadoop, data lake architecture, and development practices, improving technical delivery across the team</li>
                     </ul>
                 </div>
                 <div class="tech-stack">
@@ -142,10 +146,11 @@
                 <p class="role-description">Led performance optimization and framework enhancement efforts for big data ingestion tools, supporting cross-team collaboration and large-scale ETL operations in a Hadoop ecosystem.</p>
                 <div class="achievements">
                     <ul>
-                        <li>Improved Hive partition deletion tool, reducing runtime from 30 minutes to under 1 minute per table; awarded "Best of the Month" at Accenture BDF</li>
-                        <li>Built a PySpark-based automation tool for converting Streamsets ETL pipelines to Spark jobs for 1800+ Hive tables</li>
-                        <li>Enhanced ingestion frameworks using Shell Script, PySpark, Sqoop, Hive, and HBase to support historical and incremental data loads</li>
-                        <li>Acted as the primary support for 8+ teams using the "Streamsets to Accelerator Converter" framework, ensuring reliable maintenance and issue resolution</li>
+                        <li>Successfully enhanced a Hive partition cleanup framework, reducing execution time from approximately 30 minutes to less than 1 minute per table (approximately 98% reduction) and earning the "Best of the Month" award at Accenture BDF</li>
+                        <li>Engineered and applied a PySpark-based test automation framework using Python and shell scripting for validating the conversion of StreamSets ETL pipelines to Spark jobs, reducing testing effort from 8 hours to under 30 minutes per table</li>
+                        <li>Redesigned and successfully enhanced a centralized RDBMS-to-Hadoop ingestion framework using Shell, PySpark, Sqoop, Hive, and HBase, scaling it to support 1,800+ production data pipelines</li>
+                        <li>Successfully engineered an automated auditing framework to validate HBase entries across 1,600+ StreamSets pipelines, with automated failure logging and email notifications that eliminated nearly 2 days of manual effort</li>
+                        <li>Designed and built an automation tool to scan audit data across HBase and identify missing data loads between Hadoop and Snowflake, supporting validation across 1,000+ tables</li>
                     </ul>
                 </div>
                 <div class="tech-stack">
