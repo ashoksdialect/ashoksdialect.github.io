@@ -20,6 +20,7 @@
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#case-studies">Case Studies</a>
                 <a href="#education">Education</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -77,7 +78,7 @@
 
         <!-- Current Position -->
         <section id="experience" class="section">
-            <h2>Current Role</h2>
+            <h2><span>Current Role</span></h2>
             <div class="card highlight-card">
                 <div class="card-header">
                     <i class="fas fa-building"></i>
@@ -111,7 +112,7 @@
 
         <!-- Previous Experience -->
         <section class="section">
-            <h2>Previous Experience</h2>
+            <h2><span>Previous Experience</span></h2>
             <div class="card">
                 <div class="card-header">
                     <i class="fas fa-building"></i>
@@ -172,7 +173,7 @@
 
         <!-- Skills Section -->
         <section id="skills" class="section">
-            <h2>Skills</h2>
+            <h2><span>Skills</span></h2>
             <div class="competencies-grid">
                 <div class="card">
                     <div class="card-header">
@@ -215,7 +216,7 @@
 
         <!-- Core Competencies Section -->
         <section id="competencies" class="section">
-            <h2>Core Competencies</h2>
+            <h2><span>Core Competencies</span></h2>
             <div class="competencies-grid">
                 <div class="card">
                     <div class="card-header">
@@ -260,7 +261,8 @@
 
         <!-- Projects -->
         <section id="projects" class="section">
-            <h2>Personal Projects</h2>
+            <h2><span>Personal Projects</span></h2>
+            <p class="section-intro">Side projects I build to go deeper than work allows: simulating realistic datasets, stress-testing pipelines on cloud platforms, and documenting what actually worked.</p>
             <div class="projects-grid">
                 <div class="card project-card">
                     <div class="card-header">
@@ -318,9 +320,41 @@
             </div>
         </section>
 
+        <!-- Case Studies -->
+        <section id="case-studies" class="section">
+            <h2><span>Case Studies</span></h2>
+            <p class="section-intro">Not just what I built, but the hard problems behind it and how I worked through them. Details are generalized to avoid anything proprietary.</p>
+            <div class="case-studies">
+                <article class="card case-card">
+                    <div class="case-head">
+                        <h3>Designing a clickstream-to-purchase funnel natively on GCP</h3>
+                        <span class="case-badge">Serverless Orchestration</span>
+                    </div>
+                    <div class="case-grid">
+                        <div class="case-block">
+                            <h4>Problem</h4>
+                            <p>Clickstream-to-purchase funnel data modeling seems simple on the surface, but the complexity scales quickly when designing it from scratch. I wanted to solve this natively using Google Cloud services while keeping the infrastructure footprint as lean as possible.</p>
+                        </div>
+                        <div class="case-block">
+                            <h4>Approach</h4>
+                            <p>I mapped out the entire funnel using native GCP tools. When designing the pipeline orchestration, I had to choose between traditional Apache Airflow (Cloud Composer) and a more lightweight alternative for running hourly SQL jobs.</p>
+                        </div>
+                        <div class="case-block">
+                            <h4>Result</h4>
+                            <p>I opted for <strong>Cloud Workflows over Cloud Composer</strong>. Instead of paying for an always-on GKE cluster just to trigger hourly SQL processes, I implemented a serverless, pay-per-use architecture that scales to zero between runs.</p>
+                        </div>
+                        <div class="case-block">
+                            <h4>What I learned</h4>
+                            <p>While mastering the overall data platform design is the most important skill, choosing the right native tool matters. Using Cloud Workflows for lightweight orchestration is vastly more cost-effective than defaulting to standard heavy-duty clusters.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <!-- Coding Profiles -->
         <section id="profiles" class="section">
-            <h2>Coding Profiles</h2>
+            <h2><span>Coding Profiles</span></h2>
             <div class="profiles-grid">
                 <div class="card profile-card">
                     <div class="card-header">
@@ -424,7 +458,7 @@
 
         <!-- Certifications -->
         <section id="certifications" class="section">
-            <h2>Certifications</h2>
+            <h2><span>Certifications</span></h2>
             <div class="competencies-grid">
                 <div class="card cert-card">
                     <div class="card-header">
@@ -470,7 +504,7 @@
 
         <!-- Achievements -->
         <section id="achievements" class="section">
-            <h2>Achievements</h2>
+            <h2><span>Achievements</span></h2>
             <div class="card">
                 <ul class="achievement-list">
                     <li>
@@ -498,7 +532,7 @@
 
         <!-- Education -->
         <section id="education" class="section">
-            <h2>Education</h2>
+            <h2><span>Education</span></h2>
             <div class="education-grid">
                 <div class="card">
                     <div class="card-header">
@@ -518,7 +552,7 @@
 
         <!-- Personal Life -->
         <section class="section">
-            <h2>Beyond Code</h2>
+            <h2><span>Beyond Code</span></h2>
             <div class="card lifestyle-card">
                 <div class="interests-grid">
                     <div class="interest-item">
@@ -548,7 +582,7 @@
 
         <!-- Contact -->
         <section id="contact" class="section">
-            <h2>Let's Connect</h2>
+            <h2><span>Let's Connect</span></h2>
             <div class="card contact-card">
                 <div class="contact-grid">
                     <a href="mailto:ashok.rajendran@hotmail.com" class="contact-item">
@@ -575,6 +609,7 @@
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#case-studies">Case Studies</a>
                 <a href="#education">Education</a>
                 <a href="#contact">Contact</a>
             </div>
