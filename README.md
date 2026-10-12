@@ -1,2 +1,2 @@
-# ashoksdialect.github.io
+# ashoksdialect.com
 Personal Website
