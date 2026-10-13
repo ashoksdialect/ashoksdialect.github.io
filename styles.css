@@ -835,7 +835,7 @@ body {
         order: 3;
         width: 100%;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: center;
         gap: 0.4rem 1.1rem;
     }
 
@@ -844,6 +844,8 @@ body {
     .theme-toggle { width: 36px; height: 36px; font-size: 0.95rem; }
 
     .hero-section { padding: 3rem 1.25rem 2rem; }
+    /* Pure vw keeps the long surname inside the viewport at every phone width */
+    .hero-title { font-size: 7.6vw; }
     .hero-tag { font-size: 0.72rem; padding: 5px 11px; margin-bottom: 20px; }
     .hero-description { font-size: 1rem; line-height: 1.7; }
     .hero-cta { gap: 10px; margin-top: 22px; }
